@@ -44,7 +44,7 @@ public class Service {
                 LoanDetail loanDetail = loanService.getLoanDetail(user, loanDetails);
                 float amountPaid = loanService.getAmountPaidTillGivenMonth(bc.month, loanDetail, events);
                 int noOfEmiRemaining = loanService.getNoOfEMIRemaining(loanDetail, events, bc.month);
-                System.out.println(user.getBankName()+" "+user.getName()+" "+amountPaid+ " "+noOfEmiRemaining);
+                System.out.println(user.getBankName()+" "+user.getName()+" "+(int)amountPaid+ " "+noOfEmiRemaining);
 
             }else if(comm instanceof PaymentCommand pc){
 
