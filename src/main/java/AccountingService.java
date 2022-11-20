@@ -42,10 +42,10 @@ public class AccountingService {
         return paidAmount;
     }
 
-    public float getRemainingAmountToBePaid(LoanDetail loanDetail, List<Event> events, int month){
+    public float getRemainingAmountToBePaid(LoanDetail loanDetail, List<Event> events){
         float totalAmountPaid = getTotalAmountPaidTillGivenMonth(loanDetail.getId(), events,
-                loanDetail.getLastEmiPaidMonth());
-        return loanDetail.getTotalRepaymentAmount() - totalAmountPaid;
+                Integer.MAX_VALUE);
+        return Math.max(0, loanDetail.getTotalRepaymentAmount() - totalAmountPaid);
     }
 
 }

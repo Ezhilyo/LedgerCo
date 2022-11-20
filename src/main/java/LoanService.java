@@ -83,8 +83,8 @@ public class LoanService {
 
     public float getAmountPaidTillGivenMonth(int month, LoanDetail loanDetail, List<Event> events){
 
-        float remainingAmount = accountingService.getRemainingAmountToBePaid(loanDetail, events,
-                loanDetail.getLastEmiPaidMonth());
+        float remainingAmount = accountingService.getRemainingAmountToBePaid(loanDetail, events);
+        //        update payments till the month if not updated
         updateEmiPayments(loanDetail, month, events, remainingAmount);
         return accountingService.getTotalAmountPaidTillGivenMonth(loanDetail.getId(), events, month);
     }
@@ -96,8 +96,12 @@ public class LoanService {
     public int getNoOfEMIRemaining(LoanDetail loanDetail, List<Event> events, int month){
         float totalAmountPaidSoFar = accountingService.getTotalAmountPaidTillGivenMonth(loanDetail.getId(),
                 events, month);
-        float remainingAmount = loanDetail.getTotalRepaymentAmount() - totalAmountPaidSoFar;
-        return calculateNoOfEMIRemaining(remainingAmount, loanDetail.getEmiAmount());
+        float remainingAmount = Math.max(0,loanDetail.getTotalRepaymentAmount() - totalAmountPaidSoFar);
+//        update payments till the month if not updated
+        updateEmiPayments(loanDetail, month, events, remainingAmount);
+        float remainingAmountAfterUpdate = Math.max(0, loanDetail.getTotalRepaymentAmount())-accountingService.getTotalAmountPaidTillGivenMonth(loanDetail.getId(),
+                events, month);
+        return calculateNoOfEMIRemaining(remainingAmountAfterUpdate, loanDetail.getEmiAmount());
     }
 
 }
