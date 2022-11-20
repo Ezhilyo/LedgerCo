@@ -6,7 +6,7 @@ public class LumpSumPaymentEvent extends Event{
     private float paidAmount;
     private int month;
 
-    public LumpSumPaymentEvent(int loanId, int eventId, EventType eventType, float paidAmount, int month) {
+    public LumpSumPaymentEvent(int loanId, String eventId, EventType eventType, float paidAmount, int month) {
         super(loanId, eventId, eventType);
         this.paidAmount=paidAmount;
         this.month = month;

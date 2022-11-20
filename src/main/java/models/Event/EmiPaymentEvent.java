@@ -14,7 +14,7 @@ public class EmiPaymentEvent extends Event{
     private float paidAmount;
     private int month;
     public
-    EmiPaymentEvent(int loanId, int eventId, EventType eventType, float paidAmount, int month) {
+    EmiPaymentEvent(int loanId, String eventId, EventType eventType, float paidAmount, int month) {
         super(loanId, eventId, eventType);
         this.paidAmount = paidAmount;
         this.month = month;

@@ -5,12 +5,12 @@ import models.EventType;
 import java.util.Date;
 
 public class Event{
-    private int eventId;
+    private String eventId;
     private EventType eventType;
     private Date createdTime;
     private int loanId;
 
-    public int getEventId() {
+    public String getEventId() {
         return eventId;
     }
 
@@ -24,11 +24,11 @@ public class Event{
 
 
 
-    public Event(int loanId, int eventId, EventType eventType) {
+    public Event(int loanId, String eventId, EventType eventType) {
         this.loanId = loanId;
         this.eventId = eventId;
         this.eventType = eventType;
-        this.createdTime = new Date();;
+        this.createdTime = new Date();
     }
 
     public int getLoanId(){

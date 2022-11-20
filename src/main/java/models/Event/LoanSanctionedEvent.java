@@ -9,7 +9,7 @@ public class LoanSanctionedEvent extends Event{
 
     public float sanctionedAmount;
 
-    public LoanSanctionedEvent(int eventId, int loanId, EventType eventType, float sanctionedAmount){
+    public LoanSanctionedEvent(String eventId, int loanId, EventType eventType, float sanctionedAmount){
         super(loanId, eventId, eventType);
         this.sanctionedAmount = sanctionedAmount;
     }

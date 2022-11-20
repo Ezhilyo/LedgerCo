@@ -10,7 +10,7 @@ public class LoanDetail {
     private String name;
     private String bankName;
     private boolean isClosed;
-    private float amountToBePaid;
+    private float totalRepaymentAmount;
     private float emiAmount;
 
     public float getAmountPaidSoFar() {
@@ -45,7 +45,7 @@ public class LoanDetail {
     }
 
     public LoanDetail(int id, int user_id, float sanctionedAmount, int loanTenure,
-                      float interestRate, String name, String bankName, float amountToBePaid, int emiAmount) {
+                      float interestRate, String name, String bankName, float totalRepaymentAmount, int emiAmount) {
         this.id = id;
         this.userId = user_id;
         this.sanctionedAmount = sanctionedAmount;
@@ -54,7 +54,7 @@ public class LoanDetail {
         this.name = name;
         this.bankName = bankName;
         this.lastEmiPaidMonth = 0;
-        this.amountToBePaid = amountToBePaid;
+        this.totalRepaymentAmount = totalRepaymentAmount;
         this.emiAmount = emiAmount;
         this.isClosed=false;
     }
@@ -97,8 +97,8 @@ public class LoanDetail {
         this.lastEmiPaidMonth = lastEmiPaidMonth;
     }
 
-    public float getAmountToBePaid() {
-        return amountToBePaid;
+    public float getTotalRepaymentAmount() {
+        return totalRepaymentAmount;
     }
 
     public float getEmiAmount() {

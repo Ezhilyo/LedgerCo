@@ -13,7 +13,7 @@ public class Service {
     private List<Event> events;
 
     private UserService userService;
-    private EventService eventService;
+    private AccountingService accountingService;
     private LoanService loanService;
     Service(){
         this.users = new ArrayList<>();
@@ -21,8 +21,8 @@ public class Service {
         this.events = new ArrayList<>();
 
         this.userService = new UserService();
-        this.eventService = new EventService();
-        this.loanService = new LoanService(eventService);
+        this.accountingService = new AccountingService();
+        this.loanService = new LoanService(accountingService);
     }
 
     public void runCommands(List<String> commands) throws Exception {
