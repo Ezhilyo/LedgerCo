@@ -37,7 +37,6 @@ public class Service {
                     loanService.createLoanDetail(user, lc.amount, lc.roi,
                             lc.no_of_years, loanDetails, events);
                 }catch (Exception e){
-                    System.out.println("Loan detail already present");
                 }
 
             }else if(comm instanceof BalanceCommand bc){

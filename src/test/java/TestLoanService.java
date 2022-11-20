@@ -46,7 +46,6 @@ public class TestLoanService {
         assert loanService.getAmountPaidTillGivenMonth(5, loanDetails.get(0), events) == 2295;
         events.add(new LumpSumPaymentEvent(1, accountingService.generateEventId(), EventType.LUMP_SUM, 2000, 3));
         float res = loanService.getAmountPaidTillGivenMonth(20, loanDetails.get(0), events);
-        System.out.println(res);
         assert loanService.getAmountPaidTillGivenMonth(3, loanDetails.get(0), events) == 3377;
         assert loanService.getAmountPaidTillGivenMonth(5, loanDetails.get(0), events) == 4295;
         assert loanService.getAmountPaidTillGivenMonth(20, loanDetails.get(0), events) == 11000;
@@ -96,8 +95,6 @@ public class TestLoanService {
 
         loanService.updateEmiPayments(loanDetails.get(1), 40, events,
                 remainingAmount);
-
-        System.out.println(events.size());
 
         assert events.size() == 21;
 
