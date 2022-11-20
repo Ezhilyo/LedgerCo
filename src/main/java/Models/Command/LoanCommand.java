@@ -1,4 +1,4 @@
-package models.Command;
+package Models.Command;
 
 public class LoanCommand extends Command {
     public float amount;

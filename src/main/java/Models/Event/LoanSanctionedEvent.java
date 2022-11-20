@@ -1,6 +1,6 @@
-package models.Event;
+package Models.Event;
 
-import models.EventType;
+import Models.EventType;
 
 public class LoanSanctionedEvent extends Event{
     public float getSanctionedAmount() {

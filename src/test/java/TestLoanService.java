@@ -1,9 +1,9 @@
-import models.Event.Event;
-import models.Event.LoanSanctionedEvent;
-import models.Event.LumpSumPaymentEvent;
-import models.EventType;
-import models.LoanDetail;
-import models.User;
+import Models.Event.Event;
+import Models.Event.LoanSanctionedEvent;
+import Models.Event.LumpSumPaymentEvent;
+import Models.EventType;
+import Models.LoanDetail;
+import Models.User;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package models.Command;
+package Models.Command;
 
 import java.util.List;
 

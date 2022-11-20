@@ -1,4 +1,4 @@
-import models.User;
+import Models.User;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

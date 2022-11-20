@@ -1,5 +1,5 @@
-import models.Event.*;
-import models.LoanDetail;
+import Models.Event.*;
+import Models.LoanDetail;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package models.Event;
+package Models.Event;
 
-import models.EventType;
+import Models.EventType;
 
 public class LumpSumPaymentEvent extends Event{
     private float paidAmount;

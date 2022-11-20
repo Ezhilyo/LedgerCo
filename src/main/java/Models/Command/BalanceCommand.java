@@ -1,4 +1,4 @@
-package models.Command;
+package Models.Command;
 
 public class BalanceCommand extends Command{
     public int month;

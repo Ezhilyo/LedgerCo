@@ -1,7 +1,7 @@
-import models.Command.*;
-import models.Event.Event;
-import models.LoanDetail;
-import models.User;
+import Models.Command.*;
+import Models.Event.Event;
+import Models.LoanDetail;
+import Models.User;
 
 import java.util.ArrayList;
 import java.util.List;
