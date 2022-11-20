@@ -1,10 +1,11 @@
 package Models.Command;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class CommandFactory {
     public static Command getCommand(String comm) throws Exception{
-        List<String> strs = List.of(comm.split(" "));
+        List<String> strs = Arrays.asList(comm.split(" "));
         switch (strs.get(0)) {
             case "LOAN":
                 return new LoanCommand(strs.get(1), strs.get(2), Float.parseFloat(strs.get(3)),

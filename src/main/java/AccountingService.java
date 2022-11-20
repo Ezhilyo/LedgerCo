@@ -29,11 +29,14 @@ public class AccountingService {
     public float getTotalAmountPaidTillGivenMonth(int loan_id, List<Event> events, int month) {
         List<Event> eventsForLoan = getEventsForLoan(loan_id, events);
         float paidAmount = 0;
-        for (Event event : eventsForLoan) {if (event instanceof EmiPaymentEvent evt) {
-            if (evt.getMonth() <= month) {
-                paidAmount += evt.getPaidAmount();
+        for (Event event : eventsForLoan) {
+            if (event instanceof EmiPaymentEvent) {
+                EmiPaymentEvent evt = (EmiPaymentEvent) event;
+                if (evt.getMonth() <= month) {
+                    paidAmount += evt.getPaidAmount();
                 }
-            } else if (event instanceof LumpSumPaymentEvent evt) {
+            } else if (event instanceof LumpSumPaymentEvent) {
+                LumpSumPaymentEvent evt = (LumpSumPaymentEvent) event;
                 if (evt.getMonth() <= month) {
                     paidAmount += evt.getPaidAmount();
                 }

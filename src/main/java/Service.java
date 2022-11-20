@@ -31,7 +31,8 @@ public class Service {
 
             User user = userService.createOrgetUser(comm.bankName, comm.userName, users);
 
-            if(comm instanceof LoanCommand lc){
+            if(comm instanceof LoanCommand){
+                LoanCommand lc = (LoanCommand) comm;
 
                 try {
                     loanService.createLoanDetail(user, lc.amount, lc.roi,
@@ -39,14 +40,16 @@ public class Service {
                 }catch (Exception e){
                 }
 
-            }else if(comm instanceof BalanceCommand bc){
+            }else if(comm instanceof BalanceCommand){
+                BalanceCommand bc = (BalanceCommand) comm;
 
                 LoanDetail loanDetail = loanService.getLoanDetail(user, loanDetails);
                 float amountPaid = loanService.getAmountPaidTillGivenMonth(bc.month, loanDetail, events);
                 int noOfEmiRemaining = loanService.getNoOfEMIRemaining(loanDetail, events, bc.month);
                 System.out.println(user.getBankName()+" "+user.getName()+" "+(int)amountPaid+ " "+noOfEmiRemaining);
 
-            }else if(comm instanceof PaymentCommand pc){
+            }else if(comm instanceof PaymentCommand){
+                PaymentCommand pc = (PaymentCommand) comm;
 
                 LoanDetail loanDetail = loanService.getLoanDetail(user, loanDetails);
                 loanService.updateLumpPayment(loanDetail, pc.month, pc.amount, events);
